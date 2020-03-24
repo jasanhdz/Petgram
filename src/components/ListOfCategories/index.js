@@ -21,7 +21,6 @@ function useCategoriesData() {
   return { categories, loading }
 }
 
-
 export const ListOfCategories = () => {
   const { categories, loading } = useCategoriesData()
   const [showFixed, setShowFixed] = useState(false)
@@ -36,7 +35,7 @@ export const ListOfCategories = () => {
   }, [showFixed])
 
   const renderList = (fixed) => (
-    <List fixed={fixed} >
+    <List fixed={fixed}>
       {
         categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
       }
