@@ -1,0 +1,12 @@
+{
+  "name": "petgram",
+  "version": "1.0.0",
+  "description": "Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jasan Hernández <jasan814@gmail.com> (https://twitter.com/jasan_azael)",
+  "license": "ISC"
+}
