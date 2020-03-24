@@ -1,28 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
-
-function useCategoriesData() {
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
-  useEffect(() => {
-    setLoading(true)
-    window.fetch('https://petgramserver-gp0xvypt8.now.sh/categories')
-      .then(res => res.json())
-      .then(response => {
-        setCategories(response)
-        setLoading(false)
-      })
-    return () => {
-      console.log('ComponentWillUnMounts')
-    }
-  }, [])
-
-  return { categories, loading }
-}
+import { useFetchData } from '../../hooks/useFetchData'
 
 export const ListOfCategories = () => {
-  const { categories, loading } = useCategoriesData()
+  const [categories, loading, error] = useFetchData('https://petgramserver-gp0xvypt8.now.sh/categories')
   const [showFixed, setShowFixed] = useState(false)
 
   useEffect(() => {
@@ -41,6 +23,10 @@ export const ListOfCategories = () => {
       }
     </List>
   )
+
+  if (error) {
+    return <h2 style={{ color: 'red', textAlign: 'center' }}>{error}</h2>
+  }
 
   if (loading) {
     return 'cargando...'
