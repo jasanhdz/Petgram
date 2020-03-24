@@ -1,11 +1,13 @@
 {
-    "name": "petgram",
+    "name": "petgramp",
     "version": "1.0.0",
     "description": "Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)",
     "main": "index.js",
     "scripts": {
+        "now-build": "npm run build",
         "build": "webpack",
-        "dev": "webpack-dev-server"
+        "dev": "webpack-dev-server",
+        "lint": "standard"
     },
     "keywords": [],
     "author": "Jasan Hernández <jasan814@gmail.com> (https://twitter.com/jasan_azael)",
@@ -16,6 +18,7 @@
         "@babel/preset-react": "^7.9.1",
         "babel-loader": "^8.1.0",
         "html-webpack-plugin": "^4.0.1",
+        "standard": "^14.3.3",
         "webpack": "^4.42.0",
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3"
@@ -23,5 +26,15 @@
     "dependencies": {
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
+    },
+    "standard": {
+        "ignore": [
+            "/api/**"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "./node_modules/standard/eslintrc.json"
+        ]
     }
 }
