@@ -2,19 +2,29 @@ import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
 
-export const ListOfCategories = () => {
+function useCategoriesData() {
   const [categories, setCategories] = useState([])
-  const [showFixed, setShowFixed] = useState(false)
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
+    setLoading(true)
     window.fetch('https://petgramserver-gp0xvypt8.now.sh/categories')
       .then(res => res.json())
       .then(response => {
-        return setCategories(response)
+        setCategories(response)
+        setLoading(false)
       })
     return () => {
       console.log('ComponentWillUnMounts')
     }
   }, [])
+
+  return { categories, loading }
+}
+
+
+export const ListOfCategories = () => {
+  const { categories, loading } = useCategoriesData()
+  const [showFixed, setShowFixed] = useState(false)
 
   useEffect(() => {
     const onScroll = e => {
@@ -26,13 +36,16 @@ export const ListOfCategories = () => {
   }, [showFixed])
 
   const renderList = (fixed) => (
-    < List className={fixed ? 'fixed' : ''} >
+    <List fixed={fixed} >
       {
         categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
       }
-    </List >
+    </List>
   )
 
+  if (loading) {
+    return 'cargando...'
+  }
   return (
     <>
       {renderList()}
