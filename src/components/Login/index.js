@@ -4,7 +4,7 @@ import { Form, Input, Button, Div, Container, Text, Error } from './styles'
 import { DogSvg } from '../Dog'
 import { Link } from '@reach/router'
 
-export const UserForm = ({ onSubmit, title, description, error, disabled }) => {
+export const Login = ({ onSubmit, title, description, error, disabled }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
@@ -18,8 +18,8 @@ export const UserForm = ({ onSubmit, title, description, error, disabled }) => {
       <Div>
         <DogSvg />
       </Div>
-      <h2 style={{ textAlign: 'center' }}>{title}</h2>
-      <Text>{description}</Text>
+      <h2 style={{ textAlign: 'center' }}>Iniciar sessión</h2>
+      <Text>Inicia sesión para poder ver el mágico mundo de las mascotas</Text>
       <Form disabled={disabled} onSubmit={handleSubmit}>
         <Input
           type='text'
@@ -33,7 +33,7 @@ export const UserForm = ({ onSubmit, title, description, error, disabled }) => {
           disabled={disabled}
           {...password}
         />
-        <Button disabled={disabled}>{title}</Button>
+        <Button disabled={disabled}>Iniciar sesión</Button>
         <Text>¿No tienes una cuenta? <Link to='/register' style={{ color: 'blue' }}>Registrate</Link></Text>
       </Form>
       {error && <Error>{error}</Error>}
