@@ -1,23 +1,34 @@
 import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
+import { Form, Input, Button, Div, Container, Text } from './styles'
+import { DogSvg } from '../Dog'
+import { Link } from '@reach/router'
 
-export const UserForm = ({ onSubmit }) => {
+export const UserForm = ({ onSubmit, title, description }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type='text'
-        placeholder='Email'
-        {...email}
-      />
-      <input
-        type='password'
-        placeholder='Password'
-        {...password}
-      />
-      <button>Iniciar sessión</button>
-    </form>
+    <Container>
+      <Div>
+        <DogSvg />
+      </Div>
+      <h2 style={{ textAlign: 'center' }}>{title}</h2>
+      <Text>{description}</Text>
+      <Form onSubmit={onSubmit}>
+        <Input
+          type='text'
+          placeholder='Email'
+          {...email}
+        />
+        <Input
+          type='password'
+          placeholder='Password'
+          {...password}
+        />
+        <Button>{title}</Button>
+        <Text>¿No tienes una cuenta? <Link to='/register' style={{ color: 'blue' }}>Registrate</Link></Text>
+      </Form>
+    </Container>
   )
 }

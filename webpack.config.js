@@ -22,6 +22,17 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.(jpg|png|gif|woff|eot|ttf|svg|mp4|webm)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 1000,
+            name: "[hash].[ext]",
+            outputPath: "assets"
+          }
+        }
       }
     ]
   },
