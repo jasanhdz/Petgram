@@ -5,6 +5,7 @@ import { Router } from '@reach/router'
 
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
+import { NavBar } from './components/NavBar'
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
         <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
       </Router>
+      <NavBar />
     </>
   )
 }
