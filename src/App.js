@@ -2,6 +2,7 @@ import React from 'react'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { Logo } from './components/Logo'
 import { Router } from '@reach/router'
+import Context from './Context'
 
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
@@ -9,10 +10,6 @@ import { NavBar } from './components/NavBar'
 import { Favs } from './pages/Favs'
 import { User } from './pages/User'
 import { NotRegisterUser } from './pages/NotRegisterUser'
-
-const UserLogged = ({ children }) => {
-  return children({ isAuth: false })
-}
 
 export const App = () => {
   return (
@@ -24,7 +21,7 @@ export const App = () => {
         <Home path='/pet/:id' />
         <Detail path='/detail/:detailId' />
       </Router>
-      <UserLogged>
+      <Context.Consumer>
         {
           ({ isAuth }) => (
             isAuth
@@ -38,7 +35,7 @@ export const App = () => {
               </Router>
           )
         }
-      </UserLogged>
+      </Context.Consumer>
       <NavBar />
     </>
   )
