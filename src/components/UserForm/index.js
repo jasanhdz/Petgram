@@ -8,6 +8,11 @@ export const UserForm = ({ onSubmit, title, description }) => {
   const email = useInputValue('')
   const password = useInputValue('')
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    onSubmit({ email: email.value, password: password.value })
+  }
+
   return (
     <Container>
       <Div>
@@ -15,7 +20,7 @@ export const UserForm = ({ onSubmit, title, description }) => {
       </Div>
       <h2 style={{ textAlign: 'center' }}>{title}</h2>
       <Text>{description}</Text>
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input
           type='text'
           placeholder='Email'
