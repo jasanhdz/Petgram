@@ -21,7 +21,11 @@ const loginMutation = ({ isAuth, activateAuth }) => {
             const input = { email, password }
             const variables = { input }
             login({ variables })
-              .then(activateAuth)
+              .then(({ data }) => {
+                const { login } = data
+                console.log(login)
+                activateAuth(login)
+              })
           }
           const errorMsg = error && 'Error al iniciar sesión alguno de los campos es incorrecto'
           return (
@@ -46,7 +50,10 @@ const registerMutation = ({ isAuth, activateAuth }) => {
             const input = { email, password }
             const variables = { input }
             register({ variables })
-              .then(activateAuth)
+              .then(({ data }) => {
+                const { signup } = data
+                activateAuth(signup)
+              })
           }
           const errorMsg = error && 'El usuario ya existe o hay algún problema'
           return <Register
