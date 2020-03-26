@@ -9,7 +9,6 @@
         "dev": "webpack-dev-server",
         "lint": "standard",
         "serve:dev": "webpack --mode development && npx serve dist -s"
-
     },
     "keywords": [],
     "author": "Jasan Hernández <jasan814@gmail.com> (https://twitter.com/jasan_azael)",
@@ -33,6 +32,7 @@
         "file-loader": "^6.0.0",
         "graphql": "^14.6.0",
         "intersection-observer": "^0.7.0",
+        "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-apollo": "^3.1.3",
         "react-dom": "^16.13.1",
