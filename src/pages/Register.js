@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../Context'
 import { RegisterMutation } from '../containers/RegisterMutation'
 import { Register as RegisterComponent } from '../components/Register'
+import { Layout } from '../components/Layout'
 
 export const Register = () => {
   const { activateAuth } = useContext(Context)
@@ -32,8 +33,10 @@ export const Register = () => {
   }
 
   return (
-    <Context.Consumer>
-      {registerMutation}
-    </Context.Consumer>
+    <Layout title='Registrarse'>
+      <Context.Consumer>
+        {registerMutation}
+      </Context.Consumer>
+    </Layout>
   )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import { FavsWithQuery } from '../containers/GetFavorites'
+import { Layout } from '../components/Layout'
 
 export const Favs = () => (
-  <>
-    <h1>This is Favs</h1>
+  <Layout show title='Tus favoritos' subtitle='aquí puedes encontrar tus favoritos'>
     <FavsWithQuery />
-  </>
+  </Layout>
+
 )

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../Context'
 import { LoginMutation } from '../containers/LoginMutation'
 import { Login as LoginComponent } from '../components/Login'
+import { Layout } from '../components/Layout'
 
 export const Login = () => {
   const { activateAuth } = useContext(Context)
@@ -33,8 +34,10 @@ export const Login = () => {
     )
   }
   return (
-    <Context.Consumer>
-      {loginMutation}
-    </Context.Consumer>
+    <Layout title='Iniciar sessión'>
+      <Context.Consumer>
+        {loginMutation}
+      </Context.Consumer>
+    </Layout>
   )
 }
