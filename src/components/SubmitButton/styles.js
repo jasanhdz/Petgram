@@ -7,6 +7,7 @@ color: #fff;
 height: 32px;
 display: block;
 width: 100%;
+font-size: 1.1em;
 text-align: center;
 &[disabled] {
   opacity: .3;

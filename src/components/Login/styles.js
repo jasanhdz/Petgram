@@ -12,6 +12,8 @@ export const Input = styled.input`
   padding: 8px 4px;
   display: block;
   width: 100%;
+  outline: 0;
+  font-size: 1.1em;
   &[disabled] {
     opacity: .3;
   }

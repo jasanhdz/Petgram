@@ -2,8 +2,15 @@ import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
 import { Form, Input, Div, Container, Text, Error } from './styles'
 import { Button } from '../SubmitButton/styles'
-import { DogSvg } from '../Dog'
 import { Link } from '@reach/router'
+import Lottie from 'react-lottie'
+import * as dogAnimationData from '../../assets/dog.json'
+
+const dogAnimationOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: dogAnimationData.default
+}
 
 export const Login = ({ onSubmit, title, description, error, disabled }) => {
   const email = useInputValue('')
@@ -16,9 +23,7 @@ export const Login = ({ onSubmit, title, description, error, disabled }) => {
 
   return (
     <Container>
-      <Div>
-        <DogSvg />
-      </Div>
+      <Lottie options={dogAnimationOptions} height={200} width={300} />
       <h2 style={{ textAlign: 'center' }}>Iniciar sessión</h2>
       <Text>Inicia sesión para poder ver el mágico mundo de las mascotas</Text>
       <Form disabled={disabled} onSubmit={handleSubmit}>
