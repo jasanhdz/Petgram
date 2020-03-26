@@ -35,7 +35,7 @@ export const Register = ({ onSubmit, error, disabled }) => {
           {...password}
         />
         <SubmitButton disabled={disabled} >Registrarse</SubmitButton>
-        <Text>¿No tienes una cuenta? <Link to='/register' style={{ color: 'blue' }}>Registrate</Link></Text>
+        <Text>¿Ya tienes una cuenta? <Link to='/login' style={{ color: 'blue' }}>Iniciar sessión</Link></Text>
       </Form>
       {error && <Error>{error}</Error>}
     </Container>
