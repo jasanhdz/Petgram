@@ -63,8 +63,8 @@ export const NotRegisterUser = () => {
 
   return (
     <Context.Consumer>
-      {registerMutation}
-      {/* {loginMutation} */}
+      {/* {registerMutation} */}
+      {loginMutation}
     </Context.Consumer>
   )
 }

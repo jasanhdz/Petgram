@@ -1,6 +1,7 @@
 import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
-import { Form, Input, Button, Div, Container, Text, Error } from './styles'
+import { Form, Input, Div, Container, Text, Error } from './styles'
+import { SubmitButton } from '../SubmitButton'
 import { DogSvg } from '../Dog'
 import { Link } from '@reach/router'
 
@@ -33,7 +34,7 @@ export const Register = ({ onSubmit, error, disabled }) => {
           disabled={disabled}
           {...password}
         />
-        <Button disabled={disabled}>Registrarse</Button>
+        <SubmitButton disabled={disabled} >Registrarse</SubmitButton>
         <Text>¿No tienes una cuenta? <Link to='/register' style={{ color: 'blue' }}>Registrate</Link></Text>
       </Form>
       {error && <Error>{error}</Error>}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
-import { Form, Input, Button, Div, Container, Text, Error } from './styles'
+import { Form, Input, Div, Container, Text, Error } from './styles'
+import { Button } from '../SubmitButton/styles'
 import { DogSvg } from '../Dog'
 import { Link } from '@reach/router'
 
