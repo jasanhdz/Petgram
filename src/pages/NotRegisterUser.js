@@ -7,7 +7,6 @@ import { Login } from '../components/Login'
 
 export const NotRegisterUser = () => {
   const { activateAuth } = useContext(Context)
-
   const loginMutation = () => {
     return (
       <LoginMutation>
@@ -19,7 +18,6 @@ export const NotRegisterUser = () => {
               login({ variables })
                 .then(({ data }) => {
                   const { login } = data
-                  console.log(login)
                   activateAuth(login)
                 })
             }
@@ -62,9 +60,11 @@ export const NotRegisterUser = () => {
       </RegisterMutation>
     )
   }
+
   return (
-    <>
-      {loginMutation()}
-    </>
+    <Context.Consumer>
+      {/* {registerMutation} */}
+      {loginMutation}
+    </Context.Consumer>
   )
 }
