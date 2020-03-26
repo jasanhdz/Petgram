@@ -1,6 +1,6 @@
 import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
-import { Form, Input, Div, Container, Text, Error } from './styles'
+import { Form, Input, Container, Text, Error } from './styles'
 import { Button } from '../SubmitButton/styles'
 import { Link } from '@reach/router'
 import Lottie from 'react-lottie'
@@ -23,7 +23,7 @@ export const Login = ({ onSubmit, title, description, error, disabled }) => {
 
   return (
     <Container>
-      <Lottie options={dogAnimationOptions} height={200} width={300} />
+      <Lottie options={dogAnimationOptions} height={170} width={300} />
       <h2 style={{ textAlign: 'center' }}>Iniciar sessión</h2>
       <Text>Inicia sesión para poder ver el mágico mundo de las mascotas</Text>
       <Form disabled={disabled} onSubmit={handleSubmit}>

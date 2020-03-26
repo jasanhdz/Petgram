@@ -23,7 +23,7 @@ export const Register = ({ onSubmit, error, disabled }) => {
 
   return (
     <Container>
-      <Lottie options={dogAnimationOptions} height={200} width={300} />
+      <Lottie options={dogAnimationOptions} height={170} width={300} />
       <h2 style={{ textAlign: 'center' }}>Registrarse</h2>
       <Text>Bienvenido a Petgram! ¿ya estas listo para aventurarte al mágico mundo de las mascotas?</Text>
       <Form disabled={disabled} onSubmit={handleSubmit}>
