@@ -1,3 +1,19 @@
-# curso-platzi-react-avanzado ⚛️
+# Petgram
 
-Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)
+PWA. Red Social para Mascotas integrada con una API construida en Nodejs y Graphql
+
+![Captura de la App](./.readme-static/petgram.png)
+
+[Ver la aplicación](https://petgramp-6z10hmwqa.now.sh/)
+
+## ¿Cómo funciona?
+
+Requiere Node.JS 10
+
+-   `npm install` para instalar las dependencias.
+-   `npm run dev` para el entorno de desarrollo.
+-   `npm run build` para el entorno de producción.
+
+## Licencia
+
+MIT
