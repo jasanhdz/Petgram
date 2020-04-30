@@ -2,7 +2,7 @@
 
 PWA. Red Social para Mascotas integrada con una API construida en Nodejs y Graphql
 
-![Captura de la App](./.readme-static/petgram.png)
+<img src="./.readme-static/petgram.png" alt="Captura de App" height="800" />
 
 [Ver la aplicación](https://petgramp-6z10hmwqa.now.sh/)
 
